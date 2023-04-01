@@ -25,4 +25,5 @@ public class AvaliacaoFisicaController {
         return service.getAll();
     }
 
+
 }

@@ -15,13 +15,15 @@ import java.util.List;
 @Service
 public class AvaliacaoFisicaServiceImpl implements IAvaliacaoFisicaService {
 
+
+    //Acesso aoa repositorios
     @Autowired
     private AvaliacaoFisicaRepository avaliacaoFisicaRepository;
 
     @Autowired
     private AlunoRepository alunoRepository;
 
-    @Override
+    @Override  //Salvando o aluno na tabela "tb_avaliacoes"
     public AvaliacaoFisica create(AvaliacaoFisicaForm form) {
         AvaliacaoFisica avaliacaoFisica = new AvaliacaoFisica();
         Aluno aluno = alunoRepository.findById(form.getAlunoId()).get();
@@ -43,6 +45,7 @@ public class AvaliacaoFisicaServiceImpl implements IAvaliacaoFisicaService {
 
         return avaliacaoFisicaRepository.findAll();
     }
+
 
     @Override
     public AvaliacaoFisica update(Long id, AvaliacaoFisicaUpdateForm formUpdate) {
